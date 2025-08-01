@@ -32,9 +32,9 @@ In general, when designing an LLM system, outline the logical steps or modules f
 
 ![Screenshot 2025-07-22 at 11.00.35 PM.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products/399ef08d-5eb6-4029-a659-5ef28143d572.png)
 
-![Screenshot 2025-07-22 at 11.00.35 PM.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products%20237c9437cd3d80019913c62d8a4c1918/a39d72aa-27f5-47b8-838b-40016433f928.png)
+![Screenshot 2025-07-22 at 11.00.35 PM.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products/a39d72aa-27f5-47b8-838b-40016433f928.png)
 
-![image.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products%20237c9437cd3d80019913c62d8a4c1918/image.png)
+![image.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products/image.png)
 
                                           Figure 1a-1c: [Prompt Example in Gemini CLI AI agent](https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/core/prompts.ts)
 
@@ -48,7 +48,7 @@ Despite many similarities to traditional software engineering, building with LLM
 
 1. **Non-deterministic and variable outputs:** Traditional software is deterministic – the same input gives the same output every time (unless there’s randomization by design). LLMs, however, can produce *different* outputs to the same prompt, especially if any randomness (`temperature`) is involved. Even at a low temperature setting (to make it more deterministic), small variations or tokens can lead to divergent results. In open-ended generation tasks, this variability isn’t a big issue – two different wordings of an answer might both be acceptable. But if you’re using an LLM for something like classification, routing in a workflow, or deciding whether to call a particular function, then a small change in its output can have a butterfly effect on the whole system’s behavior. For example, if an agent is supposed to choose between two tools and it *usually* picks the correct one, but occasionally picks the wrong tool due to a slight change in phrasing, the final outcomes can be drastically different (one successful, one a failure).
     
-    ![image.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products%20237c9437cd3d80019913c62d8a4c1918/image%201.png)
+    ![image.png](My%20Understanding%20of%20Building%20AI%20LLM%20Products/image%201.png)
     
                                                       Figure 2. [Example of LLM Router](https://www.anthropic.com/engineering/building-effective-agents)
     
